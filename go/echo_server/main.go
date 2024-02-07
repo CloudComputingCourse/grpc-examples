@@ -16,8 +16,9 @@ type EchoServer struct {
 	pb.UnimplementedEchoServiceServer
 }
 
+// implement the Echo function
 func (s *EchoServer) Echo(ctx context.Context, req *pb.EchoRequest) (resp *pb.EchoResponse, err error) {
-	resp = &pb.EchoResponse {
+	resp = &pb.EchoResponse{
 		Message: req.Message,
 		Number:  req.Number,
 	}
