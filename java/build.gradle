@@ -1,7 +1,6 @@
 plugins {
     id("java")
     id("com.google.protobuf") version "0.9.4"
-    id 'com.github.johnrengelman.shadow' version '7.1.2'
     id("application")
 }
 
@@ -31,6 +30,11 @@ protobuf {
     }
 }
 
+ext {
+    serverMainClass = "cmu.cc15619.RPCServer"
+    clientMainClass = "cmu.cc15619.RPCClient"
+}
+
 jar {
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
@@ -41,4 +45,19 @@ jar {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+task runServer(type: Exec) {
+    dependsOn build
+    group = "Execution"
+    description = "Run the main class with ExecTask"
+    commandLine "java", "-classpath", sourceSets.main.runtimeClasspath.getAsPath(), serverMainClass
+}
+
+task runClient(type: Exec) {
+    dependsOn build
+    group = "Execution"
+    description = "Run the main class with ExecTask"
+    commandLine "java", "-classpath", sourceSets.main.runtimeClasspath.getAsPath(), clientMainClass
+    standardInput = System.in
 }
