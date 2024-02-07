@@ -2,7 +2,7 @@ syntax = "proto3";      // define what version of protobuf syntax
 package proto;          // package declaration
 
 option java_multiple_files = true;
-option java_package = "cmu.cc15619.rpc.proto";
+option java_package = "cmu.cc15619.rpc.echo";
 option java_outer_classname = "EchoProto";
 
 service EchoService {

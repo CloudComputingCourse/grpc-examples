@@ -1,8 +1,8 @@
 package cmu.cc15619;
 
-import cmu.cc15619.rpc.proto.EchoRequest;
-import cmu.cc15619.rpc.proto.EchoResponse;
-import cmu.cc15619.rpc.proto.EchoServiceGrpc;
+import cmu.cc15619.rpc.echo.EchoRequest;
+import cmu.cc15619.rpc.echo.EchoResponse;
+import cmu.cc15619.rpc.echo.EchoServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import java.util.Scanner;

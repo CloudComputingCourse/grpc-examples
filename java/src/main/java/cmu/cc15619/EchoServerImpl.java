@@ -1,9 +1,9 @@
 package cmu.cc15619;
 
 import io.grpc.stub.StreamObserver;
-import cmu.cc15619.rpc.proto.EchoRequest;
-import cmu.cc15619.rpc.proto.EchoResponse;
-import cmu.cc15619.rpc.proto.EchoServiceGrpc;
+import cmu.cc15619.rpc.echo.EchoRequest;
+import cmu.cc15619.rpc.echo.EchoResponse;
+import cmu.cc15619.rpc.echo.EchoServiceGrpc;
 
 import java.util.logging.Logger;
 
