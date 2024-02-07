@@ -19,8 +19,14 @@ public class RPCClient {
         while (true) {
             System.out.println("Enter a message: ");
             String message = scanner.nextLine();
-            EchoResponse response = stub.echo(EchoRequest.newBuilder().setMessage(message).setNumber(number).build());
-            System.out.println("Received message: " + response.getMessage());
+            try {
+                EchoResponse response = stub.echo(EchoRequest.newBuilder().setMessage(message).setNumber(number).build());
+                System.out.println("Received message: " + response.getMessage());
+            } catch (Exception e) {
+                System.out.println("Exception received. Is the server running correctly?");
+                e.printStackTrace();
+                return;
+            }
         }
     }
 }

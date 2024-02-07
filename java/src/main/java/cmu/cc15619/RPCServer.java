@@ -13,6 +13,7 @@ public class RPCServer {
                 .build();
         try {
             server.start();
+            System.out.println("Server running");
         } catch (IOException e) {
             e.printStackTrace();
         }
