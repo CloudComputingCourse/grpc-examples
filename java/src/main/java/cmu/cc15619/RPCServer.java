@@ -22,6 +22,7 @@ public class RPCServer {
                 server.awaitTermination();
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                return;
             }
         }
     }

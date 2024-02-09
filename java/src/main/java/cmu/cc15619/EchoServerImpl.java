@@ -14,11 +14,12 @@ public class EchoServerImpl extends EchoServiceGrpc.EchoServiceImplBase {
 
     public void echo(EchoRequest request, StreamObserver<EchoResponse> responseObserver) {
         String message = request.getMessage();
+        // Construct a response
         EchoResponse response = EchoResponse.newBuilder()
-                .setNumber(request.getNumber())
                 .setMessage(message)
                 .build();
         logger.log(java.util.logging.Level.INFO, "Received message: " + message);
+        // Use RxJava style observer pattern to send the response asynchronously
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }

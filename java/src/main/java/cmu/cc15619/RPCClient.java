@@ -9,18 +9,18 @@ import java.util.Scanner;
 
 public class RPCClient {
     public static void main(String[] args) {
+        // Connect to the gRPC server
         ManagedChannel channel = ManagedChannelBuilder.forTarget("127.0.0.1:8080")
                 .usePlaintext()
                 .build();
-
+        // Create a blocking stub. It contains methods defined in EchoService.proto
         EchoServiceGrpc.EchoServiceBlockingStub stub = EchoServiceGrpc.newBlockingStub(channel);
         Scanner scanner = new Scanner(System.in);
-        int number = 0;
         while (true) {
             System.out.println("Enter a message: ");
             String message = scanner.nextLine();
             try {
-                EchoResponse response = stub.echo(EchoRequest.newBuilder().setMessage(message).setNumber(number).build());
+                EchoResponse response = stub.echo(EchoRequest.newBuilder().setMessage(message).build());
                 System.out.println("Received message: " + response.getMessage());
             } catch (Exception e) {
                 System.out.println("Exception received. Is the server running correctly?");
