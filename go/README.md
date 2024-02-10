@@ -46,11 +46,10 @@ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
 export PATH="$PATH:$(go env GOPATH)/bin"
 ```
 
-### How to run
-
 - Run the following command to generate the Go code using `protoc`. 
 
 ```
+cd echo_server
 protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative  echo.proto
 ```
 - The above command generates the Go code and Go gRPC code  in the current directory by using `--go_out=.` and  `--go-grpc_out=.` To ensure the generated code has the correct import path, we also specified that `--go_opt=paths=source_relative` and `--go-grpc_opt=paths=source_relative`
@@ -64,6 +63,57 @@ ls
 
 # expected output:
 # echo.pb.go  echo.proto  echo_grpc.pb.go
+```
+
+### Building and running the application
+
+#### Building the server
+
+```
+cd echo_server
+go mod init Echo
+go mod tidy
+
+go build
+```
+
+#### Building the client
+
+```
+cd echo_client
+
+## Copy and paste the protobuf folder from echo_server to the echo_client folder.
+## The client needs to be aware of the defined fields.
+
+cp -r  ~/echo_server/protobuf ./
+
+go mod init EchoClient
+go mod tidy
+
+go build
+```
+
+#### Running the app
+
+- In the first terminal, run the echo server:
+
+```
+cd ~/echo_server
+go run main.go
+```
+
+- In the second terminal, run the echo client:
+  
+```
+cd ~/echo_client
+go run main.go
+```
+
+- When run succesfully, you should see the following output 
+
+```
+Response Message:  Good Luck in Team Project!
+Response Number:  15619
 ```
 
 ### Troubleshooting
