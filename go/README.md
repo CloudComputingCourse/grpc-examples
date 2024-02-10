@@ -2,8 +2,8 @@
 
 ## Overview
 
-This is a template project for the gRPC and Protocol Buffers hands-on task in gRPC primer. It uses standard gRPC Java libraries and
-`com.google.protobuf` gradle plugin for Protocol Buffers code generation. See also: [gRPC Java Quick Start](https://grpc.io/docs/languages/java/quickstart/)
+This is a template project for the gRPC and Protocol Buffers hands-on task in gRPC primer. It uses standard gRPC Go libraries and
+`protoc` plugin for Protocol Buffers code generation. See also: [gRPC Go Quick Start](https://grpc.io/docs/languages/go/quickstart/).
 
 ## Prerequisites
 - GoLang (1.21)
