@@ -32,7 +32,7 @@ protoc --version
 # libprotoc 3.12.4
 
 ```
-### Compile Protocol Buffers
+### Compiling Protocol Buffers
 
 - Install `protoc` plugins that generate the Go code of the protocol buffer language 
 
