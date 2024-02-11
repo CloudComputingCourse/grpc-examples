@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	// create a TCP connection with
+	// create a TCP connection
 	conn, err := grpc.Dial("127.0.0.1:9000", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("grpc.Dial err: %v", err)
