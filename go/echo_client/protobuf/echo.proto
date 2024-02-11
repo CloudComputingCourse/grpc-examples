@@ -1,4 +1,4 @@
-syntax = "proto3";      // define what version of protobufer syntax 
+syntax = "proto3";      // define the version of protobuf syntax 
 package echo;          // package declaration
 
 option go_package = "./echo_def"; // go import path
