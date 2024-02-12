@@ -24,7 +24,7 @@ func main() {
 		Message: "Good Luck in Team Project!",
 	})
 	if err != nil {
-		log.Fatalf("client.Search err: %v", err)
+		log.Fatalf("client.Echo err: %v", err)
 	}
 
 	println("Response Message: ", resp.Message)
