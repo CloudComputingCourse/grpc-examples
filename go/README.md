@@ -115,7 +115,6 @@ go run main.go
 
 ```
 Response Message:  Good Luck in Team Project!
-Response Number:  15619
 ```
 
 ### Troubleshooting
