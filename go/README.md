@@ -49,7 +49,7 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 - Run the following command to generate the Go code using `protoc`. 
 
 ```
-cd echo_server
+cd protobuf
 protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative  echo.proto
 ```
 - The above command generates the Go code and Go gRPC code  in the current directory by using `--go_out=.` and  `--go-grpc_out=.` To ensure the generated code has the correct import path, we also specified that `--go_opt=paths=source_relative` and `--go-grpc_opt=paths=source_relative`
@@ -70,7 +70,7 @@ ls
 #### Building the server
 
 ```
-cd protobuf
+cd ..
 go mod init Echo
 go mod tidy
 
