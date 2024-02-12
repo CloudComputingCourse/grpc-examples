@@ -80,12 +80,14 @@ go build
 #### Building the client
 
 ```
-cd echo_client
+cd ../echo_client
 
-## Copy and paste the protobuf folder from echo_server to the echo_client folder.
+## Compile the protobuf definition as we did in echo_server
 ## The client needs to be aware of the defined fields.
 
-cp -r  ~/echo_server/protobuf ./
+cd protobuf
+protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative  echo.proto
+cd ..
 
 go mod init EchoClient
 go mod tidy
