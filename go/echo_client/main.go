@@ -22,12 +22,10 @@ func main() {
 	// call the remote function like a local function
 	resp, err := client.Echo(context.Background(), &pb.EchoRequest{
 		Message: "Good Luck in Team Project!",
-		Number:  15619,
 	})
 	if err != nil {
 		log.Fatalf("client.Search err: %v", err)
 	}
 
 	println("Response Message: ", resp.Message)
-	println("Response Number: ", resp.Number)
 }
