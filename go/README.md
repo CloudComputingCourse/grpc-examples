@@ -70,7 +70,7 @@ ls
 #### Building the server
 
 ```
-cd echo_server/protobuf
+cd protobuf
 go mod init Echo
 go mod tidy
 
