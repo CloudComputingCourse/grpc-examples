@@ -34,6 +34,9 @@ protoc --version
 ```
 ### Compiling Protocol Buffers
 
+- For the following steps, we are assuming you are currently in the `~/grpc-examples/go` directory.
+
+
 - Install `protoc` plugins that generate the Go code of the protocol buffer language 
 
 ```
@@ -49,7 +52,7 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 - Run the following command to generate the Go code using `protoc`. 
 
 ```
-cd protobuf
+cd ~/grpc-examples/go/echo_server/protobuf
 protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative  echo.proto
 ```
 - The above command generates the Go code and Go gRPC code  in the current directory by using `--go_out=.` and  `--go-grpc_out=.` To ensure the generated code has the correct import path, we also specified that `--go_opt=paths=source_relative` and `--go-grpc_opt=paths=source_relative`
@@ -70,7 +73,7 @@ ls
 #### Building the server
 
 ```
-cd ..
+cd ~/grpc-examples/go/echo_server
 go mod init Echo
 go mod tidy
 
@@ -80,15 +83,13 @@ go build
 #### Building the client
 
 ```
-cd ../echo_client
-
 ## Compile the protobuf definition as we did in echo_server
 ## The client needs to be aware of the defined fields.
 
-cd protobuf
+cd ~/grpc-examples/go/echo_client/protobuf
 protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative  echo.proto
-cd ..
 
+cd ~/grpc-examples/go/echo_client/
 go mod init EchoClient
 go mod tidy
 
@@ -100,14 +101,14 @@ go build
 - In the first terminal, run the echo server:
 
 ```
-cd ~/echo_server
+cd ~/grpc-examples/go/echo_server
 go run main.go
 ```
 
 - In the second terminal, run the echo client:
   
 ```
-cd ~/echo_client
+cd ~/grpc-examples/go/echo_client
 go run main.go
 ```
 
