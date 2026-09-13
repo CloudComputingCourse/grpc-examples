@@ -2,10 +2,8 @@
 ## Overview
 This is a template project for the gRPC and Protocol Buffers hands-on task in gRPC primer. It uses standard gRPC Java libraries and
 `com.google.protobuf` gradle plugin for Protocol Buffers code generation. See also: [gRPC Java Quick Start](https://grpc.io/docs/languages/java/quickstart/)
-## Prerequisites
-- Java 17 (corretto-17)
 
-## Getting Started
+## Getting Started (assuming you are on a Ubuntu AWS VM)
 Install Java 17 (corretto-17) and set JAVA_HOME environment variable to point to the installation directory.
 Ubuntu 22.04:
 ```shell

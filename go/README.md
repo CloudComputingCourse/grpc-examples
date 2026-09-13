@@ -5,12 +5,10 @@
 This is a template project for the gRPC and Protocol Buffers hands-on task in gRPC primer. It uses standard gRPC Go libraries and
 `protoc` plugin for Protocol Buffers code generation. See also: [gRPC Go Quick Start](https://grpc.io/docs/languages/go/quickstart/).
 
-## Prerequisites
-- GoLang (1.21)
 
 ## Getting Started
 
-### Installation
+### Installation (assuming you are on a Ubuntu AWS VM)
 
 ```
 ###Install Go
@@ -19,17 +17,11 @@ sudo apt-get update && sudo snap install go --classic
 ## Verify installation
 go version
 
-# Expect output:
-# go version go1.21.6 linux/amd64
-
 ## Install protocol buffer compiler
 sudo apt install protobuf-compiler
 
 ## Verify installation
 protoc --version
-
-# Expected output:
-# libprotoc 3.12.4
 
 ```
 ### Compiling Protocol Buffers
